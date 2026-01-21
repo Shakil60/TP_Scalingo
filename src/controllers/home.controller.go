@@ -3,8 +3,8 @@ package controllers
 import (
 	"net/http"
 	"strconv"
-	"yboost-portfolio/helper"
-	"yboost-portfolio/models"
+	"yboost-portfolio/src/helper"
+	"yboost-portfolio/src/models"
 )
 
 // HomeDisplay est le contrôleur pour la page d'accueil

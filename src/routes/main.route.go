@@ -2,7 +2,7 @@ package routes
 
 import (
 	"net/http"
-	"yboost-portfolio/controllers"
+	"yboost-portfolio/src/controllers"
 )
 
 // MainRouter initialise et retourne le routeur principal de l'application
