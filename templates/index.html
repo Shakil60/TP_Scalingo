@@ -1,0 +1,384 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shakil Khaldi — Software Engineer</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="noise-overlay"></div>
+    <button class="theme-toggle" type="button" aria-label="Basculer mode clair ou sombre">
+        Mode clair
+    </button>
+    <header class="hero">
+        <nav class="nav">
+            <ul>
+                <li><span>// 01</span><a href="#home">accueil</a></li>
+                <li><span>// 02</span><a href="#expertise">compétences</a></li>
+                <li><span>// 03</span><a href="#work">mes projets</a></li>
+                <li><span>// 04</span><a href="#experience">experience</a></li>
+                <li><span>// 05</span><a href="#education">parcours scolaire</a></li>
+                <li><span>// 06</span><a href="#contact">contactez-moi</a></li>
+            </ul>
+        </nav>
+        <section id="home" class="hero-grid">
+            <div class="hero-copy">
+                <p class="eyebrow">SOFTWARE ENGINEER · FRONT-END & APP DEV</p>
+                <h1>SHAKIL KHALDI</h1>
+                <div class="hero-actions">
+                    <a class="btn primary" href="#work">Voir les projets</a>
+                    <a class="btn ghost" href="#contact">Parler d’une mission</a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>scroll</span>
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </section>
+    </header>
+
+    <main>
+        <section id="expertise" class="panel skills-panel">
+            <div class="panel-title">
+                <span>// 02</span>
+                <h2>Compétences</h2>
+            </div>
+            <div class="skills-grid">
+                <article class="skill-card fade-item" style="--skill-accent:#f472b6; --delay:0s;">
+                    <div class="skill-icon">💻</div>
+                    <h3><span>Software</span> Development</h3>
+                    <p>
+                        Expérimenté en OOP & fonctionnel : Dart, Python, Java, JavaScript, TypeScript.
+                        Création d’API robustes et d’architectures modulaires scalables.
+                    </p>
+                </article>
+                <article class="skill-card fade-item" style="--skill-accent:#60a5fa; --delay:0.1s;">
+                    <div class="skill-icon">⚛️</div>
+                    <h3><span>Frontend Dev</span> React, Next.js</h3>
+                    <p>
+                        Passionné par l’UI/UX : 5 ans d’expérience sur des interfaces responsives,
+                        design systems, accessibilité et animations haute performance.
+                    </p>
+                </article>
+                <article class="skill-card fade-item" style="--skill-accent:#fb923c; --delay:0.2s;">
+                    <div class="skill-icon">📱</div>
+                    <h3><span>Flutter Dev</span> Android, iOS</h3>
+                    <p>
+                        Applications mobiles hybrides, expérience offline-first et déploiements stores.
+                        Intégrations natives et workflows CI/CD pour livrer rapidement.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="work" class="panel projects-panel">
+            <div class="panel-title">
+                <span>// 03</span>
+                <h2>Mes projets</h2>
+            </div>
+            <div class="projects-filter">
+                <p>Filtrer par</p>
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="web">Web Dev</button>
+                <button class="chip" data-filter="game">Jeux</button>
+                <button class="chip" data-filter="team">Team</button>
+            </div>
+            <div class="project-grid">
+                <a class="project-card fade-item" data-category="game" style="--delay:0s;" href="https://github.com/H129hj/P4_Shakil_Hugo" target="_blank" rel="noopener noreferrer">
+                    <div class="project-thumb gradient-pink">
+                        <img src="/static/img/puissance4.png" alt="Capture du projet Puissance 4">
+                        <span>CLI Game</span>
+                    </div>
+                    <div class="project-meta">
+                        <h3>Puissance 4</h3>
+                        <p>Implémentation full Go d’un Puissance 4 jouable en CLI avec logique complète.</p>
+                        <span>Go • Console</span>
+                    </div>
+                </a>
+                <a class="project-card fade-item" data-category="game" style="--delay:0.05s;" href="https://github.com/H129hj/projet-red_groupe10" target="_blank" rel="noopener noreferrer">
+                    <div class="project-thumb gradient-blue">
+                        <img src="/static/img/simpson.jpg" alt="Capture du projet Springfield RPG">
+                        <span>Text RPG</span>
+                    </div>
+                    <div class="project-meta">
+                        <h3>Springfield RPG</h3>
+                        <p>RPG narratif dans l’univers des Simpsons : combats, craft et scénario dynamique.</p>
+                        <span>Go • Terminal UI</span>
+                    </div>
+                </a>
+                <a class="project-card fade-item" data-category="web" style="--delay:0.1s;" href="https://github.com/Shakil60/TP-Web-Dynamique" target="_blank" rel="noopener noreferrer">
+                    <div class="project-thumb gradient-gold">
+                        <img src="/static/img/webdynamique.jpg" alt="Capture du projet TP Web Dynamique">
+                        <span>Coursework</span>
+                    </div>
+                    <div class="project-meta">
+                        <h3>TP Web Dynamique</h3>
+                        <p>Suite d’exercices front/back pour manipuler formulaires, templating et APIs.</p>
+                        <span>HTML • PHP • JS</span>
+                    </div>
+                </a>
+                <a class="project-card fade-item" data-category="team" style="--delay:0.15s;" href="https://github.com/Create-Nuclear-Team" target="_blank" rel="noopener noreferrer">
+                    <div class="project-thumb gradient-green">
+                        <img src="/static/img/createnuclear.png" alt="Organisation GitHub Create Nuclear Team">
+                        <span>Teamwork</span>
+                    </div>
+                    <div class="project-meta">
+                        <h3>Create Nuclear Team</h3>
+                        <p>Organisation GitHub dédiée aux projets collaboratifs (design systems, outils internes).</p>
+                        <span>Collab • Open Source</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <section id="experience" class="panel experience-panel">
+            <div class="panel-title">
+                <span>// 04</span>
+                <h2>Parcours pro</h2>
+            </div>
+            <div class="experience-stack">
+                <article class="exp-card expanded">
+                    <button class="exp-summary" type="button">
+                        <div>
+                            <h3>Co-founder @ Life Coach Elevate</h3>
+                            <p>Optimisation infrastructure & pipeline produit</p>
+                        </div>
+                        <span>2024 — Présent</span>
+                    </button>
+                    <div class="exp-details">
+                        <div class="exp-meta">
+                            <span>Arizona, USA</span>
+                            <a href="https://lifecoachelevate.com" target="_blank" rel="noopener noreferrer">lifecoachelevate.com ↗</a>
+                        </div>
+                        <p>
+                            Cofondateur et lead technique : supervision de l’architecture cloud, automatisation CI/CD,
+                            coaching des équipes design/dev et déploiement de features orientées data.
+                        </p>
+                        <div class="tag-row">
+                            <span>DevOps</span><span>CI/CD</span><span>Kubernetes</span><span>Next.js</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="exp-card">
+                    <button class="exp-summary" type="button">
+                        <div>
+                            <h3>Senior Front Lead · Studio Orbits</h3>
+                            <p>Expériences immersives pour marques premium</p>
+                        </div>
+                        <span>2021 — 2024</span>
+                    </button>
+                    <div class="exp-details">
+                        <p>
+                            Pilotage d’une squad de 6 devs sur des activations marketing temps réel.
+                            Mise en place de design systems animés, SSR/edge et monitoring de perf web vitals.
+                        </p>
+                        <div class="tag-row">
+                            <span>React</span><span>Three.js</span><span>GSAP</span><span>Leadership</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="exp-card">
+                    <button class="exp-summary" type="button">
+                        <div>
+                            <h3>Software Engineer · Loop Labs</h3>
+                            <p>Design systems & tooling produit</p>
+                        </div>
+                        <span>2019 — 2021</span>
+                    </button>
+                    <div class="exp-details">
+                        <p>
+                            Conception d’outils DevOps internes, CI GitHub Actions et bibliothèques UI modulaires
+                            pour accélérer la roadmap de produits SaaS B2B.
+                        </p>
+                        <div class="tag-row">
+                            <span>TypeScript</span><span>Storybook</span><span>Testing</span><span>APIs</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="exp-card">
+                    <button class="exp-summary" type="button">
+                        <div>
+                            <h3>Freelance</h3>
+                            <p>Accompagnement startups & MVP</p>
+                        </div>
+                        <span>2017 — 2019</span>
+                    </button>
+                    <div class="exp-details">
+                        <p>
+                            Conception et itération rapide d’applications web/mobile pour des fondateurs early-stage :
+                            discovery produit, prototypage, industrialisation.
+                        </p>
+                        <div class="tag-row">
+                            <span>Product</span><span>UX</span><span>Agile</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="education" class="panel experience-panel">
+            <div class="panel-title">
+                <span>// 05</span>
+                <h2>Parcours scolaire</h2>
+            </div>
+            <div class="experience-stack">
+                <article class="exp-card expanded">
+                    <button class="exp-summary" type="button">
+                        <div>
+                            <h3>Master Informatique · Ynov</h3>
+                            <p>Spécialisation Développement Web & Mobile</p>
+                        </div>
+                        <span>2025 — Présent</span>
+                    </button>
+                    <div class="exp-details">
+                        <p>
+                            Parcours orienté projets concrets : architectures web modernes, DevOps,
+                            UX/UI et travail en équipe sur des applications complètes.
+                        </p>
+                        <div class="tag-row">
+                            <span>Full‑stack</span><span>DevOps</span><span>Projet tutoré</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="exp-card">
+                    <button class="exp-summary" type="button">
+                        <div>
+                            <h3>Licence Informatique</h3>
+                            <p>Fondamentaux algo, réseau et bases de données</p>
+                        </div>
+                        <span>2023 — 2025</span>
+                    </button>
+                    <div class="exp-details">
+                        <p>
+                            Approfondissement des bases en programmation, structures de données,
+                            conception de schémas relationnels et sécurité des systèmes.
+                        </p>
+                        <div class="tag-row">
+                            <span>Algo</span><span>SQL</span><span>Réseau</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="exp-card">
+                    <button class="exp-summary" type="button">
+                        <div>
+                            <h3>Baccalauréat Scientifique</h3>
+                            <p>Option numérique & sciences informatiques</p>
+                        </div>
+                        <span>2023</span>
+                    </button>
+                    <div class="exp-details">
+                        <p>
+                            Premiers projets de développement, logique mathématique et approfondissement
+                            des compétences en autonomie et travail de groupe.
+                        </p>
+                        <div class="tag-row">
+                            <span>Maths</span><span>NSI</span><span>Autonomie</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="contact" class="panel contact">
+            <div>
+                <span>// 06</span>
+                <h2>Contact</h2>
+                <p>Besoin d’un front-end lead pour accélérer votre roadmap ?</p>
+            </div>
+            <form>
+                <label>
+                    Nom
+                    <input type="text" placeholder="Votre nom">
+                </label>
+                <label>
+                    Email
+                    <input type="email" placeholder="vous@email.com">
+                </label>
+                <label>
+                    Message
+                    <textarea rows="4" placeholder="Parlez-moi de votre projet"></textarea>
+                </label>
+                <button class="btn primary" type="submit">Envoyer</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Shakil Khaldi</p>
+    </footer>
+
+    <script>
+        const fadeObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.fade-item').forEach(item => fadeObserver.observe(item));
+
+        const expCards = document.querySelectorAll('.exp-card');
+        expCards.forEach(card => {
+            const summary = card.querySelector('.exp-summary');
+            summary.addEventListener('click', () => {
+                const isExpanded = card.classList.contains('expanded');
+                expCards.forEach(c => c.classList.remove('expanded'));
+                if (!isExpanded) {
+                    card.classList.add('expanded');
+                }
+            });
+        });
+
+        const filterChips = document.querySelectorAll('.projects-filter .chip');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                const filter = chip.dataset.filter;
+                filterChips.forEach(c => c.classList.remove('active'));
+                chip.classList.add('active');
+
+                projectCards.forEach(card => {
+                    const category = card.dataset.category;
+                    const shouldShow = filter === 'all' || category === filter;
+                    card.classList.toggle('is-hidden', !shouldShow);
+                });
+            });
+        });
+
+        const root = document.documentElement;
+        const themeToggle = document.querySelector('.theme-toggle');
+        const savedTheme = localStorage.getItem('theme');
+
+        if (savedTheme === 'light' || savedTheme === 'dark') {
+            root.dataset.theme = savedTheme;
+        }
+
+        function updateToggleLabel() {
+            if (!themeToggle) return;
+            const current = root.dataset.theme === 'light' ? 'Mode sombre' : 'Mode clair';
+            themeToggle.textContent = current;
+        }
+
+        if (themeToggle) {
+            if (!root.dataset.theme) {
+                root.dataset.theme = 'dark';
+            }
+            updateToggleLabel();
+
+            themeToggle.addEventListener('click', () => {
+                root.dataset.theme = root.dataset.theme === 'light' ? 'dark' : 'light';
+                localStorage.setItem('theme', root.dataset.theme);
+                updateToggleLabel();
+            });
+        }
+    </script>
+</body>
+</html>
+{{end}}

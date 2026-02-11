@@ -1,0 +1,164 @@
+{{define "todo_list"}}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de tâches</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: grey;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            padding: 30px;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .add-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        .add-form input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .add-form input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .add-form button {
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .add-form button:hover {
+            background: #5568d3;
+        }
+        .todo-list {
+            list-style: none;
+        }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+        .todo-item:hover {
+            transform: translateX(5px);
+        }
+        .todo-item.done {
+            opacity: 0.6;
+        }
+        .todo-item.done .todo-text {
+            text-decoration: line-through;
+            color: #999;
+        }
+        .todo-checkbox {
+            margin-right: 15px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+        .todo-text {
+            flex: 1;
+            font-size: 16px;
+            color: #333;
+        }
+        .todo-actions {
+            display: flex;
+            gap: 10px;
+        }
+        .btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+        .btn-delete {
+            background: #dc3545;
+            color: white;
+        }
+        .btn-delete:hover {
+            background: #c82333;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #999;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Ma Liste de Tâches</h1>
+        
+        <!-- Formulaire pour ajouter une nouvelle tâche -->
+        <form method="POST" action="/todo_list" class="add-form">
+            <input type="hidden" name="action" value="add">
+            <input type="text" name="text" placeholder="Ajouter une nouvelle tâche..." required>
+            <button type="submit">Ajouter</button>
+        </form>
+        
+        <!-- Liste des tâches -->
+        {{if .Todos}}
+        <ul class="todo-list">
+            {{range .Todos}}
+            <li class="todo-item {{if .Done}}done{{end}}">
+                <form method="POST" action="/todo_list" style="display: inline;">
+                    <input type="hidden" name="action" value="toggle">
+                    <input type="hidden" name="id" value="{{.ID}}">
+                    <input type="checkbox" class="todo-checkbox" {{if .Done}}checked{{end}} 
+                           onchange="this.form.submit()">
+                </form>
+                <span class="todo-text">{{.Text}}</span>
+                <div class="todo-actions">
+                    <form method="POST" action="/todo_list" style="display: inline;">
+                        <input type="hidden" name="action" value="delete">
+                        <input type="hidden" name="id" value="{{.ID}}">
+                        <button type="submit" class="btn btn-delete">Supprimer</button>
+                    </form>
+                </div>
+            </li>
+            {{end}}
+        </ul>
+        {{else}}
+        <div class="empty-state">
+            Aucune tâche pour le moment. Ajoutez-en une ci-dessus !
+        </div>
+        {{end}}
+    </div>
+</body>
+</html>
+{{end}}
