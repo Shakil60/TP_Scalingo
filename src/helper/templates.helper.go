@@ -14,7 +14,7 @@ var listeTemplate *template.Template
 // Load charge tous les fichiers HTML depuis le dossier ../templates
 func Load() {
 	// Chargement des fichiers .html dans le dossier templates
-	temp, tempErr := template.ParseGlob("../../templates/*.html")
+	temp, tempErr := template.ParseGlob("/templates/*.html")
 	if tempErr != nil {
 		// En cas d'erreur, le programme s'arrête avec un message d'erreur
 		log.Fatalf("Erreur template - %s", tempErr.Error())
