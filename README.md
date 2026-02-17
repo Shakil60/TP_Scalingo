@@ -10,6 +10,6 @@ Accès au site déployé:
 Fichiers importants:
 
 - `main.go` — point d'entrée du serveur
-- `src\` — fichiers 
+- `src\` — fichiers qui contient le code back end 
 - `templates\` — fichiers de templates
 - `assets\` — CSS et images
